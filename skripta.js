@@ -39,11 +39,18 @@ window.addEventListener('load', function() {
 			novId = (id+1) % vrednosti.length;
 			timeout = Math.floor((Math.random() * (maxCas-minCas)) + minCas);
 			setTimeout(function() {spremeniBarvo(novId)} , timeout);
+			
+	//	start.innerHTML = "Zazeni stroboskop";
+	//	start.removeEventListener('click', stop);
+	//	start.addEventListener('click', zagon);
 		}		
 	}
 	
 	var stop = function(event) {
 		ustavi = true;
+				start.innerHTML = "Zaženi stroboskop";
+		start.removeEventListener('click', stop);
+		start.addEventListener('click', zagon);
 	}
 	
 	var zagon = function(event) {
